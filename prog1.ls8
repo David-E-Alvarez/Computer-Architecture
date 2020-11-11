@@ -1,0 +1,18 @@
+# My adder program
+
+3   # SAVE_REG R3,37    register[3] = 37
+3
+37
+
+3   # SAVE_REG R0,50
+0
+50
+
+5   # ADD R0,R3    register[0] += register[3] <-- PC
+0
+3
+
+4   # PRINT_REG R0
+0
+
+2   # HALT
