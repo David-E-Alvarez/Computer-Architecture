@@ -4,17 +4,36 @@ if len(sys.argv) != 2:
     print("usage: comp2.py filename")
     sys.exit(1)
 
+#1.) i need memory to store instructions
+memory = [0] * 16
+
 try:
 
     with open(sys.argv[1]) as f:#opens up file
         for line in f:
-            print(line)#print file contents
+            line = line.split()#make lines in file an array to parse out '#' signs
+            if line == [] or line[0] == '#':
+                continue
+            print("line: ", line)
+            value = int(line[0])
+            print("value: ", value)
 
 except FileNotFoundError:
     print(f"cannot open file {sys.argv[1]}")
     sys.exit(2)
 
-#1.) i need memory to store instructions
-memory = [0] * 16
-#2.) register holds values to be calculated on
+
+#2.) register holds values to be calculated on.
 register = [0] * 8
+#3.) index current instruction executing 
+pc = 0
+#4.) loop over program to read all instructions
+while True:
+    instruction = memory[pc]
+    print("instruction: ", instruction)
+    if instruction == 1:
+        print("hello world...yay?")
+        pc += 1
+        break
+    else:
+        break

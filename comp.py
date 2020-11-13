@@ -5,7 +5,7 @@ import sys
 
 if len(sys.argv) != 2:
     print("usage: comp.py filename")
-    sys.exit(1)
+    #sys.exit(1)
 
 memory = [0] * 16
 
@@ -38,7 +38,7 @@ print("memory: ", memory)
 while True:
 
     instruction = memory[pc]
-    print("instruction: ", instruction)
+    #print("instruction: ", instruction)
 
     if instruction == 1:  # print hello world
         print("Hello World!")
@@ -52,7 +52,7 @@ while True:
         reg_num = memory[pc + 1]
         value = memory[pc + 2]
         register[reg_num] = value
-        print("register: ", register)
+        #print("register: ", register)
         #print(register)
         pc += 3
 
