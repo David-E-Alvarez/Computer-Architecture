@@ -8,7 +8,7 @@ if len(sys.argv) != 2:
 memory = [0] * 16
 
 try:
-
+    address = 0 #used to keep track of instructions to be executed
     with open(sys.argv[1]) as f:#opens up file
         for line in f:
             line = line.split()#make lines in file an array to parse out '#' signs
@@ -17,6 +17,8 @@ try:
             print("line: ", line)
             value = int(line[0])
             print("value: ", value)
+            memory[address] = value
+            address += 1
 
 except FileNotFoundError:
     print(f"cannot open file {sys.argv[1]}")
