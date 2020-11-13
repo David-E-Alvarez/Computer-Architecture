@@ -33,9 +33,15 @@ pc = 0
 while True:
     instruction = memory[pc]
     print("instruction: ", instruction)
-    if instruction == 1:
-        print("hello world...yay?")
+    if instruction == 1: #hello world
+        print("hello world!")
         pc += 1
+    elif instruction == 2: #break
+        pc += 1
+        print("c ya wouldnt wanna be ya")
         break
+    elif instruction == 3: #save register
+        pass
     else:
-        break
+        print(f"unknown instruction {instruction} at address {pc}")
+        sys.exit(1)
