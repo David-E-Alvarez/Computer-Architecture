@@ -5,9 +5,9 @@ import sys
 
 if len(sys.argv) != 2:
     print("usage: comp.py filename")
-    sys.exit(1)
+    #sys.exit(1)
 
-memory = [0] * 256
+memory = [0] * 16
 
 try:
     address = 0
@@ -23,7 +23,6 @@ try:
 
             #print(repr(value))
             memory[address] = value
-
             address += 1
 
 except FileNotFoundError:
@@ -39,9 +38,10 @@ print("memory: ", memory)
 while True:
 
     instruction = memory[pc]
+    #print("instruction: ", instruction)
 
-    if instruction == 1:  # PRINT_BEEJ
-        print("Beej!")
+    if instruction == 1:  # print hello world
+        print("Hello World!")
         pc += 1
 
     elif instruction == 2:  # HALT
@@ -52,7 +52,7 @@ while True:
         reg_num = memory[pc + 1]
         value = memory[pc + 2]
         register[reg_num] = value
-
+        #print("register: ", register)
         #print(register)
         pc += 3
 
