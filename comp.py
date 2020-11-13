@@ -34,6 +34,7 @@ register = [0] * 8   # Like variables, names R0, R1, R2 ... R7
 
 pc = 0  # Index into memory of the currently-executing instruction
 
+print("memory: ", memory)
 
 while True:
 

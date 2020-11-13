@@ -28,6 +28,7 @@ class CPU:
         ]
 
         for instruction in program:
+            #print("instruction: ", instruction)#prints binary value in decimal value
             self.ram[address] = instruction
             address += 1
 
@@ -40,6 +41,12 @@ class CPU:
         #elif op == "SUB": etc
         else:
             raise Exception("Unsupported ALU operation")
+
+    def ram_read(self):# what parameters should this take?
+        pass
+    
+    def ram_write(self):# what parameters should this take?
+        pass
 
     def trace(self):
         """
